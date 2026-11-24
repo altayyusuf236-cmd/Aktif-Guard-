@@ -2,7 +2,7 @@
 # Hata durumunda betiği durdur
 set -o errexit
 
-# Canvas için gerekli sistem bağımlılıklarını kur
+# Canvas için gerekli sistem kütüphanelerini kur
 apt-get update && apt-get install -y \
   build-essential \
   libcairo2-dev \
@@ -11,5 +11,8 @@ apt-get update && apt-get install -y \
   libgif-dev \
   librsvg2-dev
 
-# Proje paketlerini yükle
+# Canvas'ın hazır paket indirmesini engelle, kaynak koddan derle
+npm install --build-from-source canvas
+
+# Geri kalan paketleri yükle
 npm install
