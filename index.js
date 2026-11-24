@@ -304,7 +304,7 @@ client.once("ready", async () => {
     }
 });
 
-client.login(config.token)
+client.login(process.env.token)
     .catch((err) => {
         console.error(`Discord API'ye bağlanırken hata oluştu: ${err}`);
     });
