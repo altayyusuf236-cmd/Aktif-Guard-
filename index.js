@@ -3,6 +3,11 @@ const fs = require("fs");
 const db = require('croxydb');
 const config = require("./config.json");
 
+const express = require('express');
+const app = express();
+app.get('/', (req, res) => res.send('Bot Aktif!'));
+app.listen(process.env.PORT || 3000);
+
 const { REST } = require("@discordjs/rest");
 const { Routes } = require("discord-api-types/v10");
 const { GatewayIntentBits, Partials, AuditLogEvent, Client, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
