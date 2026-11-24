@@ -11,8 +11,5 @@ apt-get update && apt-get install -y \
   libgif-dev \
   librsvg2-dev
 
-# Canvas'ın hazır paket indirmesini engelle, kaynak koddan derle
-npm install --build-from-source canvas
-
-# Geri kalan paketleri yükle
+# Paketleri kur
 npm install
