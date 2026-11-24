@@ -1,13 +1,13 @@
 {
-    "token": "TOKENİNİZİ GİRİN",
-    "durum": "Arka bahçenden seni",
+    "token": "process.env.token",
+    "durum": "discord.gg/ittifaktr",
     "limit": {
-        "delete_channels": 3,
+        "delete_channels": 4,
         "create_roles": 4,
         "delete_roles": 4,
-        "send_everyone": 3,
+        "send_everyone": 2,
         "create_channels": 5,
-        "ban_members": 4,
+        "ban_members": 5,
         "kick_members": 5
       }
 }
