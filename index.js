@@ -297,7 +297,7 @@ client.once("ready", async () => {
     const rest = new REST({ version: "10" }).setToken(process.env.token);
     try {
         await rest.put(
-            Routes.applicationCommands('1509645853776806101'), // Botun Application ID'si buraya tık
+            Routes.applicationCommands('1575146554329665616'), // Botun Application ID'si buraya tık
             {
                 body: client.commands,
             },
