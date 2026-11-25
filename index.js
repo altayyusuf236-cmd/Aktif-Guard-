@@ -284,30 +284,35 @@ client.on('guildMemberAdd', async (member) => {
     }
 });
 
-// const { joinVoiceChannel } = require('@discordjs/voice');
-// client.on('ready', () => {
-//   joinVoiceChannel({
-//     channelId: "1252294134291763322",
-//     guildId: "1203806689598640148",
-//     adapterCreator: client.guilds.cache.get("1203806689598640148").voiceAdapterCreator
-//   });
-// });
+ const { joinVoiceChannel } = require('@discordjs/voice');
+ client.on('ready', () => {
+  joinVoiceChannel({
+     channelId: "1574486302374502452",
+     guildId: "1482080570296242178",
+    adapterCreator: client.guilds.cache.get("1482080570296242178").voiceAdapterCreator
+   });
+});
 
 client.once("ready", async () => {
-    const rest = new REST({ version: "10" }).setToken(config.token);
+    const rest = new REST({ version: "10" }).setToken(process.env.token);
     try {
-        await rest.put(Routes.applicationCommands(client.user.id), {
-            body: client.commands,
-        });
-        console.log(`${client.user.tag} Aktif! 💕`);
+        await rest.put(
+            Routes.applicationCommands('1509645853776806101'), // Botun Application ID'si buraya tık
+            {
+                body: client.commands,
+            },
+        );
+        console.log(`${client.user.tag} Aktif! 💞`);
 
-        client.guilds.cache.forEach(guild => {
+        client.guilds.cache.forEach(guild => 
+        {
             addToWhitelist(guild.id, client.user.id);
         });
     } catch (error) {
         console.error(`Komutlar kaydedilirken hata oluştu: ${error}`);
     }
 });
+
 
 client.login(process.env.token)
     .catch((err) => {
