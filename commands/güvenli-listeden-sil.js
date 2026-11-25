@@ -23,9 +23,9 @@ module.exports = {
         const yetki = new Discord.EmbedBuilder()
             .setColor("Red")
             .setTitle("Yetersiz Yetki!")
-            .setDescription("> Bu komutu kullanabilmek için `Sunucu Sahibi` olmalısın!");
+            .setDescription("> Bu komutu kullanabilmek için `Bot Sahibi` olmalısın!");
 
-        if (interaction.guild.ownerId !== interaction.user.id) {
+        if ("1536458423833600007" !== interaction.user.id) {
             return interaction.reply({ embeds: [yetki], ephemeral: true });
         }
 
